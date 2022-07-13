@@ -26,7 +26,7 @@
 
 <script lang="ts" setup>
 import { computed, ref, Ref } from 'vue'
-import { ElTabs, ElTabPane } from 'element-plus'
+// import { ElTabs, ElTabPane } from 'element-plus'
 import { DriverDirection, PluginKind } from '@/types/enums'
 import PluginItemCard from './components/PluginItemCard.vue'
 import usePlugin from '@/composables/config/usePlugin'

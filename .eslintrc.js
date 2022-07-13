@@ -1,3 +1,10 @@
+/*
+ * @Author: gezuxia
+ * @Descripttion:
+ * @Date: 2022-07-11 11:54:36
+ * @LastEditors: gezuxia
+ * @LastEditTime: 2022-07-13 12:36:43
+ */
 module.exports = {
   root: true,
   env: {
@@ -10,7 +17,7 @@ module.exports = {
     'no-debugger': 'off',
     'import/extensions': 0,
     'vue/max-attributes-per-line': [
-      4,
+      'error',
       {
         singleline: 6,
         multiline: {
@@ -40,7 +47,7 @@ module.exports = {
         props: false,
       },
     ],
-    ignoreDestructuring: true,
+    ignoreDestructuring: 'error',
     camelcase: 'off',
   },
   parserOptions: {
