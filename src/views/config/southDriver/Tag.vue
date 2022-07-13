@@ -1,9 +1,9 @@
 <template>
-  <emqx-breadcrumb separator="/">
+  <!-- <emqx-breadcrumb separator="/">
     <emqx-breadcrumb-item :to="{ name: 'SouthDriver' }">{{ $t('config.southDeviceManagement') }}</emqx-breadcrumb-item>
     <emqx-breadcrumb-item :to="{ name: 'SouthDriverGroup' }">{{ $t('config.groupList') }}</emqx-breadcrumb-item>
     <emqx-breadcrumb-item>{{ $t('config.tagList') }}</emqx-breadcrumb-item>
-  </emqx-breadcrumb>
+  </emqx-breadcrumb> -->
   <emqx-card v-emqx-loading="isListLoading" class="tag-page">
     <h3 class="card-title">{{ $t('config.tagList') }}</h3>
     <div class="card-bar-under-title common-flex">
@@ -95,10 +95,11 @@
 import { useTagAttributeTypeSelect, useTagTypeSelect } from '@/composables/config/useAddTag'
 import EditTagDialog from './components/EditTagDialog.vue'
 import useTagList from '@/composables/config/useTagList'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import AComWithDesc from '@/components/AComWithDesc.vue'
 import useUploadTagList from '@/composables/config/useUploadTagList'
 import useExportTagTable from '@/composables/config/useExportTagTable'
+import { computed } from 'vue'
 
 const router = useRouter()
 
@@ -146,6 +147,16 @@ const downloadTemplate = () => {
 const handleExport = () => {
   exportTable(totalData.value, groupName.value, node.value)
 }
+
+const $route = useRoute()
+
+const test = computed(() => {
+  const matched = $route.matched.filter(item => item.name)
+
+  return matched
+})
+console.log('test', $route.matched, test);
+
 </script>
 
 <style lang="scss">
