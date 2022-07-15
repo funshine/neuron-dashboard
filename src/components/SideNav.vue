@@ -4,14 +4,14 @@
       <emqx-menu-item class="nav-item" v-if="!nav.subMenus" style="padding-left: 0" :key="index" :index="nav.to">
         <div class="nav-item-content">
           <i class="nav-icon iconfont" :class="nav.icon"></i>
-          <span class="nav-label ellipsis">{{ nav.label }}</span>
+          <span class="nav-label ellipsis">{{ $t(`${nav.label}`) }}</span>
         </div>
       </emqx-menu-item>
       <emqx-submenu v-else :key="nav.to" :index="nav.to">
         <template #title>
           <div class="nav-item-content">
             <i class="nav-icon iconfont" :class="nav.icon"></i>
-            <span class="nav-label ellipsis">{{ nav.label }}</span>
+            <span class="nav-label ellipsis">{{ $t(`${nav.label}`) }}</span>
           </div>
         </template>
         <div class="sub-menu-list">
@@ -22,7 +22,7 @@
             :index="subMenuItem.to"
           >
             <div class="nav-item-content">
-              <span class="nav-label ellipsis">{{ subMenuItem.label }}</span>
+              <span class="nav-label ellipsis">{{ $t(`${subMenuItem.label}`) }}</span>
             </div>
           </emqx-menu-item>
         </div>
@@ -48,66 +48,66 @@ export default defineComponent({
       navList: [
         // {
         //   to: '/overview',
-        //   label: t('common.home'),
+        //   label: 'common.home',
         //   icon: 'iconattributed',
         // },
         {
           to: '/monitoring/data',
-          label: t('data.monitoring'),
+          label: 'data.monitoring',
           icon: 'iconstatus',
           subMenus: [
             {
               to: '/monitoring/data',
-              label: t('data.dataMonitoring'),
+              label: 'data.dataMonitoring',
             },
           ],
         },
         {
           to: '/configuration',
-          label: t('config.config'),
+          label: 'config.config',
           icon: 'iconconfig',
           subMenus: [
             {
               to: '/configuration/north-driver',
-              label: t('config.northAppSetup'),
+              label: 'config.northAppSetup',
             },
             {
               to: '/configuration/south-driver',
-              label: t('config.southDeviceManagement'),
+              label: 'config.southDeviceManagement',
             },
             {
               to: '/configuration/plugin',
-              label: t('config.pluginManagement'),
+              label: 'config.pluginManagement',
             },
           ],
         },
         {
           to: '/ekuiper',
-          label: t('ekuiper.streamProcessing'),
+          label: 'ekuiper.streamProcessing',
           icon: 'iconstream',
           subMenus: [
             {
               to: '/ekuiper/nodes/single-node/rules',
-              label: t('ekuiper.rule'),
+              label: 'ekuiper.rule',
             },
             {
               to: '/ekuiper/nodes/single-node/extension',
-              label: t('ekuiper.extension'),
+              label: 'ekuiper.extension',
             },
           ],
         },
         {
           to: '/admin',
-          label: t('admin.admin'),
+          label: 'admin.admin',
           icon: 'iconAdministration1',
           subMenus: [
             {
               to: '/admin/account-settings',
-              label: t('common.accountSettings'),
+              label: 'common.accountSettings',
             },
             {
               to: '/admin/log',
-              label: t('admin.log'),
+              label: 'admin.log',
             },
           ],
         },
